@@ -5,8 +5,9 @@ require_once 'src/data/entitys/Proovedores.php';
 class ProovedorService {
 
     /**
-     * Esta asdasdsad
-     * @return Provedor[]
+     * Obtener todos los provedores
+     * de la base de datos
+     * @return Proovedor[]
      */
     function getAll() {
         $db = new Connection();
@@ -27,6 +28,12 @@ class ProovedorService {
         return $proveedores;
     }
 
+    /**
+     * Retorna el provedor con 
+     * el id enviado
+     * @param id ID Codigo unico del proovedor
+     * @return Proovedor
+     */
     function getById($id) {
         $db = new Connection();
         $sql = 'SELECT * FROM clinica.Proveedores WHERE id = $id;';

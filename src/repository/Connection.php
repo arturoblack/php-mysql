@@ -12,7 +12,6 @@ class Connection {
         $this->conn = mysqli_connect(
             $this->host, $this->username, 
             $this->password, $this->db);
-        
     }
 
     function closeConnection() {
