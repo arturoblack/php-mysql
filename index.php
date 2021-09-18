@@ -1,15 +1,8 @@
 <?php
-require_once 'lib/SimpleTemplateEngine/loader.php';
-require_once 'src/servicios/ProovedorService.php';
-
+define('ROOTPATH', dirname(__FILE__));
+require_once ROOTPATH.'/lib/SimpleTemplateEngine/loader.php';
 $env = new SimpleTemplateEngine\Environment('./src/views');
 
-$service = new ProovedorService();
-$provedores = $service->getAll();
-$datos = [
-    "provedores" => $provedores,
-];
-
-echo $env->render('provedores.php', $datos);
+echo $env->render('index.php', []);
 
 ?>
